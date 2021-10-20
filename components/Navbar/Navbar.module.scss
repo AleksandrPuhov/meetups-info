@@ -1,0 +1,29 @@
+@import "../../styles/vars.scss";
+
+.Navbar {
+}
+.NavbarList {
+	display: flex;
+	align-items: center;
+	li + li {
+		margin-left: 20px;
+	}
+}
+.NavbarLinkActive,
+.NavbarLinkBase {
+	display: block;
+	padding: 5px;
+	color: $mainTextColor;
+	transition: $transitionTime;
+	&:hover {
+		color: $HeaderHoverColor;
+	}
+}
+
+.NavbarLinkBase {
+	border-bottom: 3px solid transparent;
+}
+
+.NavbarLinkActive {
+	border-bottom: 3px solid $HeaderHoverColor;
+}
