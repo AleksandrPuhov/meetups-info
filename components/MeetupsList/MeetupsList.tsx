@@ -1,24 +1,22 @@
+import { FC } from "react";
+import { IMeetup } from "../../types/meetup";
 import MeetupsItem from "../MeetupsItem/MeetupsItem";
 
 import styles from "./MeetupsList.module.scss";
 
-const MeetupsList = () => {
-	const list = [
-		{
-			id: 1,
-			imgSrc: "",
-			name: "Test1",
-			info: "",
-			date: "",
-			users: [],
-		},
-	];
+type MeetupsListTypeProps = {
+	meetupsList: [IMeetup];
+};
 
+const MeetupsList: FC<MeetupsListTypeProps> = ({ meetupsList }) => {
 	return (
 		<ul className={styles.MeetupsList}>
-			<li>
-				<MeetupsItem />
-			</li>
+			{meetupsList &&
+				meetupsList.map((meetup) => (
+					<li key={meetup.id}>
+						<MeetupsItem {...meetup} />
+					</li>
+				))}
 		</ul>
 	);
 };

@@ -4,5 +4,5 @@ export interface IMeetup {
 	name: string;
 	info: string;
 	date: string;
-	users: Array<any>;
+	users?: Array<any>;
 }
